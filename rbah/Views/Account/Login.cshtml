@@ -1,0 +1,24 @@
+﻿@model rbah.Models.LoginModel
+
+@{
+    ViewBag.Title = "Авторизация";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+<table class="public">
+    <tr>
+        <td class="autor">Логин</td>
+        <td>
+            @Html.EditorFor(m => m.name)
+        </td>
+    </tr>
+    <tr>
+        <td class="autor">Пароль</td>
+        <td>
+            @Html.EditorFor(m => m.password)
+        </td>
+    </tr>
+</table>
+    <button type="submit" style="margin-top:10px;height:50px;width: 80%;margin-left:10%;">Вход</button>
+}

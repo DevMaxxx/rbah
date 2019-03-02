@@ -1,0 +1,25 @@
+﻿@model rbah.Models.PostModel
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Создать</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+<table class="public">
+    <tr>
+        <td class="autor">Название</td>
+        <td>
+            @Html.EditorFor(x => x.postHead)
+        </td>
+    </tr>
+    <tr class="memo">
+        <td class="autor">Содержание</td>
+        <td>
+            @Html.TextAreaFor(x => x.postBody)
+        </td>
+    </tr>
+</table>
+    <button type="submit" style="margin-top:10px;height:50px;width: 80%;margin-left:10%;">Опубликовать</button>
+}

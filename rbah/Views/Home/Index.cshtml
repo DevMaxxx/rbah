@@ -1,0 +1,23 @@
+﻿@model IEnumerable<rbah.Models.Publish>
+@{
+    ViewBag.Title = "Home Page";
+}
+<table class="public">
+    <tr>
+        <th class="autor">Автор</th>
+        <th>Публикация</th>
+    </tr>
+    @foreach (var p in Model)
+    {
+    <tr>
+        <td class="autor">
+            @p.autorName
+        </td>
+        <td >
+            <a href="/Post/Get/@p.postId">
+                @p.title
+            </a>
+        </td>
+    </tr>
+    }
+</table>

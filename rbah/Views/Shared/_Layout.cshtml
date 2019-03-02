@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title - rbah</title>
+    @Styles.Render("~/Content/Site.css")
+</head>
+<body>
+    <div class="header">
+
+        <table>
+            <tr>
+                @if (ViewBag.isAuth)
+                {
+                    <td>
+                        Добро пожаловать @ViewBag.name
+                    </td>
+                    <td>
+                        @Html.ActionLink("Новая статья", "Create", "Post")
+                    </td>
+                    <td>
+                        @Html.ActionLink("Выйти", "Logout", "Account")
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        @Html.ActionLink("Регистрация", "Register", "Account")
+                    </td>
+                    <td></td>
+                    <td>
+                        @Html.ActionLink("Авторизация", "Login", "Account")
+                    </td>
+                }
+
+            </tr>
+        </table>
+    </div>
+    <div class="content">
+        @RenderBody()
+    </div>
+</body>
+</html>
